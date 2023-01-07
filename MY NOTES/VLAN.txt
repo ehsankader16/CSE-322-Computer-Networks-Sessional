@@ -1,0 +1,72 @@
+switch0#show vlan brief
+
+switch0(config)#vlan 10
+switch0(config-vlan)#name CSE
+switch0(config-vlan)#vlan 30
+switch0(config-vlan)#name ME
+
+switch0(config)#interface f0/1
+switch0(config-if)#switchport mode access
+switch0(config-if)#switchport access vlan 10
+switch0(config-if)#end
+
+switch0#show interface vlan 10
+
+switch0(config)#interface f0/3
+switch0(config-if)#switchport mode trunk
+switch0(config-if)#switchport trunk native vlan 10
+switch0(config-if)#switchport trunk allowed vlan 10,30
+
+//legacy inter VLAN Routing
+
+in switch:
+interface f0/11
+switchport mode access
+switchport access vlan 10
+interface f0/4
+switchport mode access
+switchport access vlan 10
+
+interface f0/6
+switchport mode access
+switchport access vlan 30
+interface f0/5
+switchport mode access
+switchport access vlan 30
+
+in router:
+int g0/0
+ip address 192.169.10.1 255.255.255.0
+no shutdown
+
+int g0/1
+ip address 192.169.30.1 255.255.255.0
+no shutdown
+
+
+//router on a stick
+in switch:
+
+interface f0/11
+switchport mode access
+switchport access vlan 10
+
+interface f0/6
+switchport mode access
+switchport access vlan 30
+
+interface f0/5
+switchport mode trunk
+switchport trunk native vlan 10
+switchport trunk allowed vlan 10,30
+
+in router:
+
+interface g0/0.10
+encapsulation dot1q 10
+ip address 192.169.10.1 255.255.255.0
+interface g0/0.30
+encapsulation dot1q 30
+ip address 192.169.30.1 255.255.255.0
+interface g0/0
+no shutdown

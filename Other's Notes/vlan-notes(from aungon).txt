@@ -1,0 +1,52 @@
+show configuration
+------------------
+en
+sh vlan br
+
+VLAN creation command
+---------------------
+en
+conf t
+vlan <vlan-id>
+name <vlan-name>
+end
+
+VLAN port assignment
+--------------------
+en
+conf t
+int <line name>
+switchport mode access
+switchport access vlan <vlan-id>
+end
+
+Deleting VLAN
+-------------
+deleting one vlan: no vlan <vlan-id>
+deleting all vlan: delete flash:vlan.dat 
+then reload
+(Caution: Before deleting a VLAN, reassign all member ports to a different VLAN)
+
+Configure trunk VLAN
+--------------------
+en
+conf t
+int <line name>
+sw mode trunk
+sw trunk native vlan <vlan-id>
+sw trunk allowed vlan <vlan-list>
+end
+
+Checking mode configuration
+---------------------------
+sh int <line name> switchport
+
+Router subinterface configuration
+---------------------------------
+en
+conf t 
+int <subinterface-id> (eg: g0/0.10)
+encapsulation dot1q 10 (it's maybe the vlan number)
+ip add <ip-address> <subnet-mask>
+int <line name> (eg: g0/0 in this case)
+no shut

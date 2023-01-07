@@ -1,0 +1,36 @@
+access-list?
+
+================ ACL ================
+ip access-list 10 permit 192.168.10.0 	0.0.0.15 	(10.1-10.15 allowed)
+
+ip access-list 10 permit host 192.168.10.10 		(Just allows 192.168.10.10)
+
+access-list 10 remark PERMISSION OF CSE LAB 1		(Note)
+
+Standard ACL (Just source)	(1-99)
+
+Named Access-List Syntax
+ip access-list extended FTP-FILTER
+permit tcp 192.168.10.0 	0.0.0.255 any eq ftp
+allowing 192.168.10.0 - 192.168.10.255 ip addresses to access any ftp
+
+int s0/0/0
+ip access-group FTP-FILTER in
+
+Example {
+no access-list 1 		(clear any standard ACL beforehand)
+access-list 101  permit tcp host  192.168.10.5  host 192.168.50.5 eq www
+access-list 101  deny   tcp host  192.168.10.5  host 192.168.50.6 eq ftp
+															
+access-list 101  permit tcp host  192.168.20.5  host 192.168.50.6 eq ftp
+access-list 101  deny   tcp host  192.168.20.5  host 192.168.50.5 eq www
+access-list 101 permit ip any any
+
+apply ACL to ports
+int s0/0/0
+ip access-group 101 out
+}
+
+no ip access-list 10	(clears access list 10)
+permit ip any any		(to enable ping)
+sh access-list

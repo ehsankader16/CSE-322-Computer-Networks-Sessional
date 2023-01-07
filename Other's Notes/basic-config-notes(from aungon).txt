@@ -1,0 +1,84 @@
+show configurations
+-------------------
+sh run
+sh start
+
+Device name and password setting
+--------------------------------
+en
+conf t
+hostname <name>
+
+## to secure user exec mode, give password to line console 0
+line password:
+--------------
+en
+conf t
+line <line-name> <line-number>
+password <password>
+login
+end
+
+## to secure privileged mode give password to privileged mode
+secure privileged mode:
+-----------------------
+en
+conf t
+enable secret <password>
+exit
+
+securing vty line (virtual lines that are required to telnet/SSH
+----------------------------------------------------------------
+en
+conf t
+line vty 0 15 (all the lines numbered 0-15)
+password <password>
+login
+end
+
+encrypt password
+----------------
+en
+conf t
+service password-encryption
+exit
+
+banner message
+--------------
+en 
+conf t
+banner motd #<message>#
+
+save configurations
+-------------------
+en
+copy run start
+
+erase start configurations
+--------------------------
+reload
+en
+erase start
+
+
+## To access the switch remotely, an IP address and a subnet mask must be configured on the SVI (Switch virtual interface)
+## for SVI use VLAN 1
+interface configuration:
+-----------------------
+en
+conf t
+int <interface-name interface number/s>
+description
+ip add <id-address> <subnet-mask>
+no shut
+exit
+
+## Router configuration
+Secure remote telnet/SSH:
+-------------------------
+en
+conf t
+line vty 0 4
+password <password>
+login
+transport input {ssh | telnet}

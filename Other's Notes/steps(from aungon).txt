@@ -1,0 +1,43 @@
+communication btn devices under same switch
+--------------------------------------------
+1. set ip address and subnet of the devices' line
+
+telnet configuration on switch
+------------------------------
+(network part of ip should have to match)
+1. enable password 
+2. conf a vlan interface on the switch with an ip
+3. configure a telnet password (line vty 0 15)
+
+telnet communication on Router
+------------------------------
+(network part of ip should have to match)
+1. enable password
+2. configure ip address of the line that is connected to the switch/Device
+3. set ip address, subnet mask and default gateway on the pc
+4. up vlan 1 (no ip required)
+5. set telnet password (line vty)
+
+vlan configuration
+------------------
+1. create vlans on individual switches
+2. assign vlans on individual ports in access mode
+3. assign native and other vlans to trunk port (line connecting to other switch)
+4. configure ip addresses of the PCs
+
+legacy inter-VLAN routing
+-------------------------
+1. create vlans on individual switches
+2. assign vlans on individual ports in access mode
+3. connect the router with the switch. (one line for every vlan. Max 2 is possible)
+4. set ip of the router lines from the router side
+5. set default gateways of the PCs
+
+Router on a stick inter-VLAN routing
+------------------------------------
+1. create vlans on individual switches
+2. assign vlans on individual ports in access mode
+3. connect the router with the switch (use only one port)
+4. set the port as trunk on the switch side
+5. configure subinterfaces in router (no. of subinterfaces = no. of vlans)
+6. set default gateways of the PCs

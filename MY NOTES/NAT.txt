@@ -1,0 +1,63 @@
+//static nat
+=========R0=========
+ip nat inside source static 192.168.10.11 209.209.209.10
+ip nat inside source static 192.168.10.12 209.209.209.11
+ip nat inside source static 192.168.20.11 209.209.209.12
+ip nat inside source static 192.168.20.12 209.209.209.13
+
+int gig 0/0
+ip nat inside
+ip address 192.168.10.1 255.255.255.0
+no shutdown
+int gig 0/1
+ip nat inside
+ip address 192.168.20.1 255.255.255.0
+no shutdown
+int serial 0/3/0
+ip nat outside
+ip address 209.209.209.1 255.255.255.0
+no shutdown
+exit
+ip route 0.0.0.0 0.0.0.0 s0/3/0
+
+==========R1==================
+ip nat inside source static 192.168.30.60 210.210.210.10
+ip nat inside source static 192.168.30.50 210.210.210.11
+
+int gig 0/0
+ip nat inside
+ip address 192.168.30.1 255.255.255.0
+no shutdown
+
+int serial 0/3/0
+ip nat outside
+ip address 209.209.209.2 255.255.255.0
+no shutdown
+
+exit
+ip route 0.0.0.0 0.0.0.0 s0/3/0
+
+//dynamic nat
+========R0 dynamic nat============
+ip nat pool POOL1 209.209.209.10 209.209.209.13 netmask 255.255.255.248
+access-list 1 permit 192.168.10.0 0.0.0.255
+access-list 1 permit 192.168.20.0 0.0.0.255
+ip nat inside source list 1 pool POOL1
+
+int gig 0/0
+ip nat inside
+ip address 192.168.10.1 255.255.255.0
+no shutdown
+
+int gig 0/1
+ip nat inside
+ip address 192.168.20.1 255.255.255.0
+no shutdown
+
+int serial 0/3/0
+ip nat outside
+ip address 210.209.209.1 255.255.255.0
+no shutdown
+
+ex
+ip route 0.0.0.0 0.0.0.0 s0/3/0
