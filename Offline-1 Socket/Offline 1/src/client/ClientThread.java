@@ -32,7 +32,7 @@ public class ClientThread extends Thread{
                     DataOutputStream dataOutputStream = new DataOutputStream(socket.getOutputStream());
 
                     // Here we send the File to Server
-                    System.out.println(fileToUpload.length());
+                    //System.out.println(fileToUpload.length());
                     dataOutputStream.writeLong(fileToUpload.length());
                     dataOutputStream.flush();
                     // Here we  break file into chunks

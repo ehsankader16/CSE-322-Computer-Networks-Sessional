@@ -41,7 +41,7 @@ public class ServerThread extends Thread {
         String httpRequest = null;
         try {
             httpRequest = br.readLine();
-            System.out.println(httpRequest);
+            //System.out.println(httpRequest);
             logWriter.println("HTTP request:\n"+httpRequest+"\n");
         } catch(IOException e) {
             e.printStackTrace();
@@ -95,10 +95,10 @@ public class ServerThread extends Thread {
         if(path.equals("")) {
             file = new File(pathToRoot);
         } else {
-            file = new File(pathToRoot+"\\"+path);
+            file = new File(pathToRoot+path);
         }
         PrintWriter pw = new PrintWriter(socket.getOutputStream());
-        System.out.println("path"+path);
+        //System.out.println("path 101:"+path);
         StringBuilder htmlContent = handleFile(file, path);
         StringBuilder httpResponse = new StringBuilder();
         if(file.exists() && file.isDirectory()) {
@@ -130,14 +130,13 @@ public class ServerThread extends Thread {
                 httpResponse.append("Content-Type: application/octet-stream\r\n");
             }
 
-            httpResponse.append("Content-Length: " + file.length() + "\r\n");
+            httpResponse.append("Content-Length: " + (int)file.length() + "\r\n");
             httpResponse.append("\r\n");
 
             logWriter.println("HTTP response:\n"+httpResponse);
             logWriter.println("=========================================================================");
 
             pw.write(httpResponse.toString());
-            pw.write("\r\n");
             pw.flush();
             sendFile(file);
 
@@ -164,7 +163,7 @@ public class ServerThread extends Thread {
         String isValid = br.readLine();
         String uploadPath = "F:\\3-2\\CSE 322 Computer Networks Sessional\\Offline-1 Socket\\Offline 1\\Uploaded";
         if(isValid.startsWith("invalid")) {
-            System.out.println(isValid);
+            //System.out.println(isValid);
         } else {
             String fileName = "F:\\3-2\\CSE 322 Computer Networks Sessional\\Offline-1 Socket\\Offline 1\\Uploaded\\" + uploadedFileName;
             receiveFile(fileName);
@@ -177,10 +176,12 @@ public class ServerThread extends Thread {
         for(int i = 0; i < noIterations; i++) {
                 path += pathArray[i]+"\\";
         }
+
         if(noIterations > 0) {
             path += pathArray[noIterations];
-            path = path.substring(1);
+            //System.out.println("path 183:"+path);
         }
+        //System.out.println("path 186:"+path);
         return path;
     }
 
@@ -197,13 +198,13 @@ public class ServerThread extends Thread {
 //                    System.out.println("B:"+path+"/"+fileName);
 //                    System.out.println("C:"+serverURL +"/"+path.replace("\\", "/")+"/"+fileName);
                     if(fileContent.isDirectory()) {
-                        htmlString.append("\t\t<li><b><a href=\""+ serverURL + "/" + path.replace("\\", "/") + "/" + fileName + "\"> " + fileName+" </a></b></li>\n");
+                        htmlString.append("\t\t<li><b><a href=\""+ serverURL + path.replace("\\", "/") + "/" + fileName + "\"> " + fileName+" </a></b></li>\n");
                     } else if(fileContent.isFile()) {
                         if(fileContent.getName().endsWith(".txt") || fileContent.getName().endsWith(".jpg")
                                 || fileContent.getName().endsWith(".png") ) {
-                            htmlString.append("\t\t<li><a href=\"" + serverURL + "/" + path.replace("\\", "/") + "/" + fileName + "\" target=\"_blank\"> " + fileName + " </a></li>\n");
+                            htmlString.append("\t\t<li><a href=\"" + serverURL + path.replace("\\", "/") + "/" + fileName + "\" target=\"_blank\" > " + fileName + " </a></li>\n");
                         } else {
-                            htmlString.append("\t\t<li><a href=\"" + serverURL + "/" + path.replace("\\", "/") + "/" + fileName + "\"> " + fileName + " </a></li>\n");
+                            htmlString.append("\t\t<li><a href=\"" + serverURL + path.replace("\\", "/") + "/" + fileName + "\" > " + fileName + " </a></li>\n");
                         }
                     }
                 }
@@ -224,18 +225,17 @@ public class ServerThread extends Thread {
         DataOutputStream dataOutputStream = new DataOutputStream(socket.getOutputStream());
 
         // Here we send the File to Client
-        dataOutputStream.writeLong(file.length());
-
+//        dataOutputStream.writeLong(file.length());
+//        dataOutputStream.flush();
         // Here we  break file into chunks
         byte[] buffer = new byte[1024];
         while ((bytes = fileInputStream.read(buffer)) != -1) {
-            // Send the file to Server Socket
+            // Send the file to Client Socket
             dataOutputStream.write(buffer, 0, bytes);
             dataOutputStream.flush();
-
         }
         fileInputStream.close();
-        dataOutputStream.close();
+        //dataOutputStream.close();
     }
 
     private void receiveFile(String fileName) throws IOException {
@@ -244,7 +244,7 @@ public class ServerThread extends Thread {
         int bytes = 0;
         FileOutputStream fileOutputStream = new FileOutputStream(fileName);
         long size = dataInputStream.readLong(); // read file size
-        System.out.println(size);
+        //System.out.println(size);
         byte[] buffer = new byte[1024];
         while (size > 0 && (bytes = dataInputStream.read(buffer, 0, (int)Math.min(buffer.length, size))) != -1) {
             // Here we write the file using write method
