@@ -228,7 +228,7 @@ public class ServerThread extends Thread {
 //        dataOutputStream.writeLong(file.length());
 //        dataOutputStream.flush();
         // Here we  break file into chunks
-        byte[] buffer = new byte[1024];
+        byte[] buffer = new byte[32];
         while ((bytes = fileInputStream.read(buffer)) != -1) {
             // Send the file to Client Socket
             dataOutputStream.write(buffer, 0, bytes);
@@ -245,7 +245,7 @@ public class ServerThread extends Thread {
         FileOutputStream fileOutputStream = new FileOutputStream(fileName);
         long size = dataInputStream.readLong(); // read file size
         //System.out.println(size);
-        byte[] buffer = new byte[1024];
+        byte[] buffer = new byte[32];
         while (size > 0 && (bytes = dataInputStream.read(buffer, 0, (int)Math.min(buffer.length, size))) != -1) {
             // Here we write the file using write method
             fileOutputStream.write(buffer, 0, bytes);
