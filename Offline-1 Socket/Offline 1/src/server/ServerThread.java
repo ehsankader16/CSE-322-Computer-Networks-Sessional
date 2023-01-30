@@ -161,11 +161,11 @@ public class ServerThread extends Thread {
 
     private void handleUploadRequest (String uploadedFileName) throws IOException {
         String isValid = br.readLine();
-        String uploadPath = "F:\\3-2\\CSE 322 Computer Networks Sessional\\Offline-1 Socket\\Offline 1\\Uploaded";
+        String uploadPath = "F:\\3-2\\CSE 322 Computer Networks Sessional\\Offline-1 Socket\\Offline 1\\root\\Uploaded";
         if(isValid.startsWith("invalid")) {
             //System.out.println(isValid);
         } else {
-            String fileName = "F:\\3-2\\CSE 322 Computer Networks Sessional\\Offline-1 Socket\\Offline 1\\Uploaded\\" + uploadedFileName;
+            String fileName = "F:\\3-2\\CSE 322 Computer Networks Sessional\\Offline-1 Socket\\Offline 1\\root\\Uploaded\\" + uploadedFileName;
             receiveFile(fileName);
         }
     }

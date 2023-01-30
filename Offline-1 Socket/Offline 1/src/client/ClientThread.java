@@ -40,7 +40,7 @@ public class ClientThread extends Thread{
                     while ((bytes = fileInputStream.read(buffer)) != -1) {
                         // Send the file to Server Socket
                         dataOutputStream.write(buffer, 0, bytes);
-                        System.out.print("=");
+                        //System.out.print("=");
                         dataOutputStream.flush();
                     }
                     System.out.println();

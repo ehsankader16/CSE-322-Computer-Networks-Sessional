@@ -1,0 +1,87 @@
+s2=====
+int f0/5
+switchport access vlan 20
+no shutdown
+int f0/6
+switchport access vlan 30
+no shutdown
+int f0/7
+switchport access vlan 40
+no shutdown
+
+int f0/1
+switchport mode trunk
+switchport trunk native vlan 101
+switchport trunk allowed vlan 20,30,40,101
+no shutdown
+
+int vlan 101
+ip address 192.168.101.2 255.255.255.0
+ip default-gateway 192.168.101.1
+no shutdown
+
+r1===
+int s0/0/0
+clock rate 64000
+ip address 30.0.0.1 255.255.255.252
+no shutdown
+
+int g0/0.20
+encapsulation dot1Q 20
+ip address 192.168.20.1 255.255.255.0
+int g0/0.30
+encapsulation dot1Q 30
+ip address 192.168.30.1 255.255.255.0
+int g0/0.40
+encapsulation dot1Q 40
+ip address 192.168.40.1 255.255.255.0
+int g0/0.101
+encapsulation dot1Q 101
+ip address 192.168.101.1 255.255.255.0
+
+int g0/0
+no shutdown
+
+ip route 0.0.0.0 0.0.0.0 s0/0/0
+
+no access-list 101
+access-list 101 deny tcp 192.168.20.0 0.0.0.255 host 192.168.50.11 eq www
+access-list 101 permit tcp 192.168.20.0 0.0.0.255 host 192.168.50.22 eq ftp
+access-list 101 permit tcp 192.168.30.0 0.0.0.255 host 192.168.50.11 eq www
+access-list 101 deny tcp  192.168.30.0 0.0.0.255 host 192.168.50.22 eq ftp
+access-list 101 permit tcp  192.168.40.0 0.0.0.255 host 192.168.50.11 eq www
+access-list 101 permit tcp  192.168.40.0 0.0.0.255 host 192.168.50.22 eq ftp
+access-list 101 permit ip any any
+
+
+int s0/0/0
+ip access-group 101 out
+
+r2====
+int s0/0/0
+clock rate 64000
+ip address 30.0.0.2 255.255.255.252
+no shutdown
+int g0/0
+ip address 192.168.50.1 255.255.255.0
+no shutdown
+
+ip route 0.0.0.0 0.0.0.0 s0/0/0
+
+
+
+
+
+
+
+///in r3
+ip nat pool BUET-pool 112.5.30.16 112.5.30.17 netmask 255.255.255.240
+access-list 1 deny 192.168.70.0 0.0.0.255
+access-list 1 permit 192.168.80.0 0.0.0.255
+ip nat inside source list 1 pool BUET-pool overload
+
+int g0/0
+ip nat inside
+int s0/3/0
+ip nat outside
+
