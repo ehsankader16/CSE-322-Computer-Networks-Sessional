@@ -11,11 +11,6 @@ switch0(config-line)#password switchpassword
 switch0(config-line)#login
 switch0(config-line)#end
 
-switch0(config)#line console 0
-switch0(config-line)#password switchpassword
-switch0(config-line)#login
-switch0(config-line)#end
-
 switch0#configure terminal
 switch0(config)#enable secret privilegedpassword
 switch0(config)#end
