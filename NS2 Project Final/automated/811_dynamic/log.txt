@@ -1,0 +1,246 @@
+testing wireless_811_dynamic.tcl 0 20 20 200 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 1 20 20 200 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 0 40 20 200 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 1 40 20 200 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 0 60 20 200 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 1 60 20 200 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 0 80 20 200 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 1 80 20 200 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 0 100 20 200 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 1 100 20 200 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 0 40 10 200 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 1 40 10 200 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 0 40 20 200 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 1 40 20 200 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 0 40 30 200 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 1 40 30 200 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 0 40 40 200 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 1 40 40 200 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 0 40 50 200 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 1 40 50 200 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 0 40 20 100 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 1 40 20 100 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 0 40 20 200 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 1 40 20 200 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 0 40 20 300 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 1 40 20 300 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 0 40 20 400 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 1 40 20 400 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 0 40 20 500 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 1 40 20 500 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 0 40 20 200 5 1
+Simulation starting
+testing wireless_811_dynamic.tcl 1 40 20 200 5 1
+Simulation starting
+testing wireless_811_dynamic.tcl 0 40 20 200 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 1 40 20 200 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 0 40 20 200 15 1
+Simulation starting
+testing wireless_811_dynamic.tcl 1 40 20 200 15 1
+Simulation starting
+testing wireless_811_dynamic.tcl 0 40 20 200 20 1
+Simulation starting
+testing wireless_811_dynamic.tcl 1 40 20 200 20 1
+Simulation starting
+testing wireless_811_dynamic.tcl 0 40 20 200 25 1
+Simulation starting
+testing wireless_811_dynamic.tcl 1 40 20 200 25 1
+Simulation starting
+testing wireless_811_dynamic.tcl 0 40 20 200 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 1 40 20 200 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 0 40 20 200 10 2
+Simulation starting
+testing wireless_811_dynamic.tcl 1 40 20 200 10 2
+Simulation starting
+testing wireless_811_dynamic.tcl 0 40 20 200 10 3
+Simulation starting
+testing wireless_811_dynamic.tcl 1 40 20 200 10 3
+Simulation starting
+testing wireless_811_dynamic.tcl 0 40 20 200 10 4
+Simulation starting
+testing wireless_811_dynamic.tcl 0 20 20 200 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 1 20 20 200 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 0 40 20 200 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 1 40 20 200 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 0 60 20 200 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 1 60 20 200 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 0 80 20 200 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 1 80 20 200 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 0 100 20 200 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 1 100 20 200 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 0 40 10 200 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 1 40 10 200 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 0 40 20 200 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 1 40 20 200 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 0 40 30 200 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 1 40 30 200 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 0 40 40 200 10 1
+testing wireless_811_dynamic.tcl 0 20 20 200 10 1
+Simulation starting
+Simulation ending
+num_nodes is set 20
+channel.cc:sendUp - Calc highestAntennaZ_ and distCST_
+highestAntennaZ_ = 1.5,  distCST_ = 550.0
+testing wireless_811_dynamic.tcl 1 20 20 200 10 1
+Simulation starting
+Simulation ending
+num_nodes is set 20
+channel.cc:sendUp - Calc highestAntennaZ_ and distCST_
+highestAntennaZ_ = 1.5,  distCST_ = 550.0
+testing wireless_811_dynamic.tcl 0 40 20 200 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 1 40 20 200 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 0 60 20 200 10 1
+Simulation starting
+Simulation ending
+num_nodes is set 60
+channel.cc:sendUp - Calc highestAntennaZ_ and distCST_
+highestAntennaZ_ = 1.5,  distCST_ = 550.0
+testing wireless_811_dynamic.tcl 1 60 20 200 10 1
+Simulation starting
+Simulation ending
+num_nodes is set 60
+channel.cc:sendUp - Calc highestAntennaZ_ and distCST_
+highestAntennaZ_ = 1.5,  distCST_ = 550.0
+testing wireless_811_dynamic.tcl 0 80 20 200 10 1
+Simulation starting
+Simulation ending
+num_nodes is set 80
+channel.cc:sendUp - Calc highestAntennaZ_ and distCST_
+highestAntennaZ_ = 1.5,  distCST_ = 550.0
+testing wireless_811_dynamic.tcl 1 80 20 200 10 1
+Simulation starting
+Simulation ending
+num_nodes is set 80
+channel.cc:sendUp - Calc highestAntennaZ_ and distCST_
+highestAntennaZ_ = 1.5,  distCST_ = 550.0
+testing wireless_811_dynamic.tcl 0 100 20 200 10 1
+Simulation starting
+Simulation ending
+num_nodes is set 100
+channel.cc:sendUp - Calc highestAntennaZ_ and distCST_
+highestAntennaZ_ = 1.5,  distCST_ = 550.0
+testing wireless_811_dynamic.tcl 1 100 20 200 10 1
+Simulation starting
+Simulation ending
+num_nodes is set 100
+channel.cc:sendUp - Calc highestAntennaZ_ and distCST_
+highestAntennaZ_ = 1.5,  distCST_ = 550.0
+testing wireless_811_dynamic.tcl 0 40 10 200 10 1
+Simulation starting
+Simulation ending
+num_nodes is set 40
+channel.cc:sendUp - Calc highestAntennaZ_ and distCST_
+highestAntennaZ_ = 1.5,  distCST_ = 550.0
+testing wireless_811_dynamic.tcl 1 40 10 200 10 1
+Simulation starting
+Simulation ending
+num_nodes is set 40
+channel.cc:sendUp - Calc highestAntennaZ_ and distCST_
+highestAntennaZ_ = 1.5,  distCST_ = 550.0
+testing wireless_811_dynamic.tcl 0 40 20 200 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 1 40 20 200 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 0 40 30 200 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 1 40 30 200 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 0 40 40 200 10 1
+Simulation starting
+Simulation ending
+num_nodes is set 40
+channel.cc:sendUp - Calc highestAntennaZ_ and distCST_
+highestAntennaZ_ = 1.5,  distCST_ = 550.0
+testing wireless_811_dynamic.tcl 1 40 40 200 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 0 40 50 200 10 1
+Simulation starting
+Simulation ending
+num_nodes is set 40
+channel.cc:sendUp - Calc highestAntennaZ_ and distCST_
+highestAntennaZ_ = 1.5,  distCST_ = 550.0
+testing wireless_811_dynamic.tcl 1 40 50 200 10 1
+Simulation starting
+Simulation ending
+num_nodes is set 40
+channel.cc:sendUp - Calc highestAntennaZ_ and distCST_
+highestAntennaZ_ = 1.5,  distCST_ = 550.0
+testing wireless_811_dynamic.tcl 0 40 20 100 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 1 40 20 100 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 0 40 20 200 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 1 40 20 200 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 0 40 20 300 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 1 40 20 300 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 0 40 20 400 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 1 40 20 400 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 0 40 20 500 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 1 40 20 500 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 0 40 20 200 5 1
+Simulation starting
+testing wireless_811_dynamic.tcl 1 40 20 200 5 1
+Simulation starting
+testing wireless_811_dynamic.tcl 0 40 20 200 10 1
+Simulation starting
+testing wireless_811_dynamic.tcl 1 40 20 200 10 1
